@@ -78,7 +78,7 @@ async def bot_start(event):
     if chat.id != Config.OWNER_ID:
         start_msg = f"Haloo..{_format.mentionuser(chat.first_name , chat.id)},\
                     \nIni adalah bot Manage sekaligus Asisten bagi Owner saya .\
-                    \nJika butuh bantuan anda bisa hubungi Owner saya dibawah ini, jika tidak abaikan pesan ini dan tekan saja /help untuk melihat command\
+                    \nJika butuh bantuan anda bisa hubungi Owner saya dibawah ini, jika tidak..abaikan pesan ini dan tekan saja /help untuk melihat command\
                     \n\nPowered by [aruna](https://t.me/RosoOwner_bot)"
         buttons = [
             (
