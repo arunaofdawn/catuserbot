@@ -366,7 +366,7 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="Roso Help",
+                title="🍺 Roso Help",
                 description="Help menu for Roso Assistant",
                 text=_result[0],
                 buttons=_result[1],
