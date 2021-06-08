@@ -29,7 +29,7 @@ from .logger import logging
 LOGS = logging.getLogger(__name__)
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-CATLOGO = "https://telegra.ph/file/493268c1f5ebedc967eba.jpg"
+CATLOGO = "https://telegra.ph/file/1fb570349859933e637d8.jpg"
 tr = Config.COMMAND_HAND_LER
 
 
@@ -63,7 +63,7 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"👮‍♂️ Admin ({len(GRP_INFO['admin'])})",
+                f"👨‍✈️ Admin ({len(GRP_INFO['admin'])})",
                 data=f"admin_menu",
             ),
             Button.inline(
@@ -77,7 +77,7 @@ def main_menu():
                 data=f"fun_menu",
             ),
             Button.inline(
-                f"🧩 Misc ({len(GRP_INFO['misc'])})",
+                f"🗃 Misc ({len(GRP_INFO['misc'])})",
                 data=f"misc_menu",
             ),
         ),
@@ -191,12 +191,12 @@ def paginate_help(
             ] + [
                 (
                     Button.inline("⌫", data=f"{prefix}_prev({modulo_page})_plugin"),
-                    Button.inline("⚙️ Main Menu", data="mainmenu"),
+                    Button.inline("⚙️ Menu", data="mainmenu"),
                     Button.inline("⌦", data=f"{prefix}_next({modulo_page})_plugin"),
                 )
             ]
         else:
-            pairs = pairs + [(Button.inline("⚙️ Main Menu", data="mainmenu"),)]
+            pairs = pairs + [(Button.inline("⚙️ Menu", data="mainmenu"),)]
     else:
         if len(pairs) > number_of_rows:
             pairs = pairs[
@@ -242,11 +242,11 @@ async def inline_handler(event):  # sourcery no-metrics
     if query_user_id == Config.OWNER_ID or query_user_id in Config.SUDO_USERS:
         hmm = re.compile("secret (.*) (.*)")
         match = re.findall(hmm, query)
-        if query.startswith("**Catuserbot"):
+        if query.startswith("**info"):
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/Jisan09/catuserbot"),
+                    Button.url("Support 🔊", "https://t.me/arunasupportbot"),
                 )
             ]
             ALIVE_PIC = gvarstatus("ALIVE_PIC")
@@ -366,8 +366,8 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="© CatUserbot Help",
-                description="Help menu for CatUserbot",
+                title="Roso Help",
+                description="Help menu for Roso Assistant",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,
@@ -491,10 +491,10 @@ async def inline_handler(event):  # sourcery no-metrics
     else:
         buttons = [
             (
-                Button.url("Source code", "https://github.com/Jisan09/catuserbot"),
+                Button.url("🔊 Support", "https://arunasupportbot"),
                 Button.url(
-                    "Deploy",
-                    "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack&template=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack",
+                    "🧑‍💻 My Owner",
+                    "https://t.me/RosoOwner_bot",
                 ),
             )
         ]
@@ -503,14 +503,14 @@ async def inline_handler(event):  # sourcery no-metrics
             url=CATLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁.", "md"
+            "ʀᴏsᴏ_ᴀssɪsᴛᴀɴᴛ.", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="𝘾𝙖𝙩𝙐𝙨𝙚𝙧𝙗𝙤𝙩",
-            description="Deploy yourself",
-            url="https://github.com/Jisan09/catuserbot",
+            title="ʀᴏsᴏ_ᴀssɪsᴛᴀɴᴛ",
+            description="Account",
+            url="https://t.me/RosoManage2_bot",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(
@@ -531,11 +531,11 @@ async def on_plug_in_callback_query_handler(event):
 
 @catub.tgbot.on(CallbackQuery(data=re.compile(b"check")))
 async def on_plugin_callback_query_handler(event):
-    text = f"𝙿𝚕𝚞𝚐𝚒𝚗𝚜: {len(PLG_INFO)}\
-        \n𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜: {len(CMD_INFO)}\
-        \n\n{tr}𝚑𝚎𝚕𝚙 <𝚙𝚕𝚞𝚐𝚒𝚗> : 𝙵𝚘𝚛 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝚙𝚕𝚞𝚐𝚒𝚗 𝚒𝚗𝚏𝚘.\
-        \n{tr}𝚑𝚎𝚕𝚙 -𝚌 <𝚌𝚘𝚖𝚖𝚊𝚗𝚍> : 𝙵𝚘𝚛 𝚊𝚗𝚢 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚒𝚗𝚏𝚘.\
-        \n{tr}𝚜 <𝚚𝚞𝚎𝚛𝚢> : 𝚃𝚘 𝚜𝚎𝚊𝚛𝚌𝚑 𝚊𝚗𝚢 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜.\
+    text = f"Plugins: {len(PLG_INFO)}\
+        \nCommands: {len(CMD_INFO)}\
+        \n\n{tr}help <plugin> : Untuk spesifikasi info plugin.\
+        \n{tr}help -c <command> : Untuk melihat info command apa pun.\
+        \n{tr}s <query> : Untuk mencari commands apa pun.\
         "
     await event.answer(text, cache_time=0, alert=True)
 
