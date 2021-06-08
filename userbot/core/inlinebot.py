@@ -366,7 +366,7 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="🍺 Roso Help",
+                title="Roso Help🍺",
                 description="Help menu for Roso Assistant",
                 text=_result[0],
                 buttons=_result[1],
@@ -503,12 +503,12 @@ async def inline_handler(event):  # sourcery no-metrics
             url=CATLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "ʀᴏsᴏ_ᴀssɪsᴛᴀɴᴛ.", "md"
+            "Roso-Assistant.", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="ʀᴏsᴏ_ᴀssɪsᴛᴀɴᴛ",
+            title="Roso-Assistant",
             description="Account",
             url="https://t.me/RosoManage2_bot",
             thumb=photo,
@@ -533,9 +533,9 @@ async def on_plug_in_callback_query_handler(event):
 async def on_plugin_callback_query_handler(event):
     text = f"Plugins: {len(PLG_INFO)}\
         \nCommands: {len(CMD_INFO)}\
-        \n\n{tr}help <plugin> : Untuk spesifikasi info plugin.\
-        \n{tr}help -c <command> : Untuk melihat info command apa pun.\
-        \n{tr}s <query> : Untuk mencari commands apa pun.\
+        \n\n{tr}help <plugin> : For specific plugin info.\
+        \n{tr}help -c <command> : For any command info.\
+        \n{tr}s <query> : To search any commands.\
         "
     await event.answer(text, cache_time=0, alert=True)
 
