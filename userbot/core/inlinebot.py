@@ -52,8 +52,8 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"Assistant helper\
-        \nManaged by [aruna](https://t.me/RosoOwner_bot)"
+    text = f"**Assistant helper**\
+        \n**Managed by [Roso](https://t.me/RosoOwner_bot)**"
     buttons = [
         (
             Button.inline(
@@ -93,7 +93,7 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"➕ Extra ({len(GRP_INFO['extra'])})",
+                f"📚 Extra ({len(GRP_INFO['extra'])})",
                 data=f"extra_menu",
             ),
             Button.inline(
@@ -524,7 +524,7 @@ async def inline_handler(event):  # sourcery no-metrics
 @check_owner
 async def on_plug_in_callback_query_handler(event):
     buttons = [
-        (Button.inline("Open Menu", data="mainmenu"),),
+        (Button.inline("Open Menu 🔑", data="mainmenu"),),
     ]
     await event.edit("Menu Closed", buttons=buttons)
 
