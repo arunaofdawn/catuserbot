@@ -52,8 +52,8 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗛𝗲𝗹𝗽𝗲𝗿\
-        \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
+    text = f"Assistant helper\
+        \nManaged by [aruna](https://t.me/RosoOwner_bot)"
     buttons = [
         (
             Button.inline(
@@ -97,7 +97,7 @@ def main_menu():
                 data=f"extra_menu",
             ),
             Button.inline(
-                f"⚰️ Useless ({len(GRP_INFO['useless'])})",
+                f"🃏 Useless ({len(GRP_INFO['useless'])})",
                 data=f"useless_menu",
             ),
         ),
