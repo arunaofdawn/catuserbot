@@ -76,16 +76,16 @@ async def bot_start(event):
         return
     reply_to = await reply_id(event)
     if chat.id != Config.OWNER_ID:
-        start_msg = f"Hey! 👤{_format.mentionuser(chat.first_name , chat.id)},\
-                    \nI am {_format.mentionuser(user.first_name , user.id)}'s assistant bot.\
-                    \nYou can contact to my master from here.\
-                    \n\nPowered by [Roso](https://t.me/RosoManage2_bot)"
+        start_msg = f"Haloo..{_format.mentionuser(chat.first_name , chat.id)},\
+                    \nIni adalah bot Manage sekaligus Asisten bagi Owner saya .\
+                    \nJika butuh bantuan anda bisa hubungi Owner saya dibawah ini, jika tidak abaikan pesan ini dan tekan saja /help untuk melihat command\
+                    \n\nPowered by [aruna](https://t.me/RosoOwner_bot)"
         buttons = [
             (
-                Button.url("Support", "https://t.me/arunasupportbot"),
+                Button.url("🔊 Support", "https://t.me/arunasupportbot"),
                 Button.url(
-                    "Owner",
-                    "https://t.me/RosoOwner_bot",
+                    "🤖 Other bot",
+                    "https://t.me/RosoMusic_bot",
                 ),
             )
         ]
