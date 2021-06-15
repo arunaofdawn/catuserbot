@@ -101,9 +101,16 @@ def main_menu():
                 data=f"useless_menu",
             ),
         ),
+        (  
+            Button.url("🔊 Support", "https://arunasupportbot"),
+            Button.url(
+                "🧑‍💻 My Owner",
+                "https://t.me/RosoOwner_bot",
+            ),
+        ),
         (
             Button.inline(
-                f"🔒 Close Menu",
+                f"Close Menu 🔒",
                 data=f"close",
             ),
         ),
